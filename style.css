@@ -1,0 +1,175 @@
+/* ================================= 
+  Base Styles
+==================================== */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Varela Round', sans-serif;
+  line-height: 1.6;
+  color: #3a3a3a;
+}
+
+p {
+  font-size: .95em;
+  margin-bottom: 1.5em;
+}
+
+h2,
+h3,
+a {
+  color: #093a58;
+}
+
+h2,
+h3 {
+  margin-top: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* ================================= 
+  Base Layout Styles
+==================================== */
+
+/* ---- Navigation ---- */
+
+.name {
+  font-size: 1.25em;
+}
+
+.name,
+.main-nav li {
+  text-align: center;
+  background: #fff;
+  margin-top: 6px;
+  margin-bottom: 6px;
+}
+
+.main-nav a {
+  font-size: .95em;
+  color: #3acec2;
+  text-transform: uppercase;
+}
+
+.main-nav a:hover {
+  color: #093a58;
+}
+
+.name a,
+.main-nav a {
+  padding: 10px 15px;
+}
+
+/* ---- Layout Containers ---- */
+
+.container {
+  padding-left: 1em;
+  padding-right: 1em;
+}
+
+.main-header {
+  padding-top: 1.5em;
+  padding-bottom: 1.5em;
+  background: #3acec2;
+  margin-bottom: 30px;
+}
+
+.main-footer {
+  text-align: center;
+  padding: 2em 0;
+  background: #d9e4ea;
+}
+
+/* ================================= 
+  Media Queries
+==================================== */
+
+/* For screens wider than 769px */
+@media screen and (min-width: 769px) {
+
+  /*.wrap {
+    min-height: calc(100vh - 89px);
+  }
+
+  .container {
+    width: 80%;
+    max-width: 1150px;
+    margin: 0 auto;
+  }
+
+  .name,
+  .main-nav,
+  .main-nav li {
+    display: inline;
+  }
+
+  .name {
+    margin-right: 50px;
+    width: 240px;
+  }*/
+
+  /*.animal-list {
+    column-count: 3;
+  }*/
+
+}
+
+/* css magic */
+
+.container {
+    margin: 0 auto;
+    max-width: 1020px;
+}
+
+.animal-list {
+    column-count: 3;
+    list-style: none;
+    padding: 0;
+}
+
+.animal-list li {
+    position: relative;
+}
+
+.animal-list li:hover .project-overlay {
+    opacity: .8;
+    background-color: blue;
+}
+
+.animal-list li:hover .project-title {
+    opacity: 1;
+}
+
+.project-overlay {
+    align-items: center;
+    bottom: 0;
+    display: flex;
+    left: 0;
+    margin-bottom: 7px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transition: all .4s ease-out;
+}
+
+.project-title {
+    color: #fff;
+    opacity: 0;
+    text-align: center;
+    width: 100%;
+}
+
+
+img {
+    height: auto;
+    max-width: 100%;
+}
+
+
+
+
