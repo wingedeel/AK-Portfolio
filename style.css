@@ -1,4 +1,4 @@
-/* ================================= 
+  /* ================================= 
   Base Styles
 ==================================== */
 
@@ -12,22 +12,6 @@ body {
   color: #3a3a3a;
 }
 
-p {
-  font-size: .95em;
-  margin-bottom: 1.5em;
-}
-
-h2,
-h3,
-a {
-  color: #093a58;
-}
-
-h2,
-h3 {
-  margin-top: 0;
-}
-
 a {
   text-decoration: none;
 }
@@ -38,32 +22,95 @@ a {
 
 /* ---- Navigation ---- */
 
-.name {
+/* header */
+.header-name {
   font-size: 1.25em;
+  text-align:center;
 }
 
-.name,
-.main-nav li {
+.header-nav li {
   text-align: center;
   background: #fff;
   margin-top: 6px;
   margin-bottom: 6px;
 }
 
-.main-nav a {
+.header-nav a {
   font-size: .95em;
   color: #3acec2;
   text-transform: uppercase;
 }
 
-.main-nav a:hover {
+.header-nav a:hover {
   color: #093a58;
 }
 
-.name a,
-.main-nav a {
+.header-nav a {
   padding: 10px 15px;
 }
+
+/* main */
+
+.container {
+    margin: 0 auto;     /* Center content */
+    max-width: 1020px;
+}
+
+.main-list {
+    column-count: 3;
+    list-style: none; /* Remove bullets */
+    padding: 0;
+}
+
+.main-list li {
+    position: relative; /* Set as absolute to create 
+                            co-ord system for child
+                            project-overlay */
+}
+
+.main-list li:hover .project-overlay {
+    opacity: .8;
+    background-color: blue;
+
+}
+
+.main-list li:hover .project-title {
+    opacity: 1;
+}
+
+.project-overlay {
+    position: absolute;
+    display: flex;
+    align-items: center; /* Flex property */
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+     /* Fix:element was going over dividing line */
+    margin-bottom: 7px; 
+    /* Put transition in main project-overlay declaration, 
+    not just the hover bit, so that you get transition on
+    both hover in and hover out */
+    transition: background-color .3s ease-out; 
+}
+
+.project-title {
+    color: #fff;
+    opacity: 0;
+    text-align: center;
+    width: 100%;      /* Have to set width to 100% as parent
+                        has display:flex which resets width */
+}
+
+
+img {
+    /* Ensure dynamic image stays within parent 
+    If max-width is not set to 100%, width of 
+    element will be width of image*/
+    height: auto;   
+    max-width: 100%;
+}
+
 
 /* ---- Layout Containers ---- */
 
@@ -72,18 +119,6 @@ a {
   padding-right: 1em;
 }
 
-.main-header {
-  padding-top: 1.5em;
-  padding-bottom: 1.5em;
-  background: #3acec2;
-  margin-bottom: 30px;
-}
-
-.main-footer {
-  text-align: center;
-  padding: 2em 0;
-  background: #d9e4ea;
-}
 
 /* ================================= 
   Media Queries
@@ -92,84 +127,5 @@ a {
 /* For screens wider than 769px */
 @media screen and (min-width: 769px) {
 
-  /*.wrap {
-    min-height: calc(100vh - 89px);
-  }
-
-  .container {
-    width: 80%;
-    max-width: 1150px;
-    margin: 0 auto;
-  }
-
-  .name,
-  .main-nav,
-  .main-nav li {
-    display: inline;
-  }
-
-  .name {
-    margin-right: 50px;
-    width: 240px;
-  }*/
-
-  /*.animal-list {
-    column-count: 3;
-  }*/
-
 }
-
-/* css magic */
-
-.container {
-    margin: 0 auto;
-    max-width: 1020px;
-}
-
-.animal-list {
-    column-count: 3;
-    list-style: none;
-    padding: 0;
-}
-
-.animal-list li {
-    position: relative;
-}
-
-.animal-list li:hover .project-overlay {
-    opacity: .8;
-    background-color: blue;
-}
-
-.animal-list li:hover .project-title {
-    opacity: 1;
-}
-
-.project-overlay {
-    align-items: center;
-    bottom: 0;
-    display: flex;
-    left: 0;
-    margin-bottom: 7px;
-    position: absolute;
-    right: 0;
-    top: 0;
-    transition: all .4s ease-out;
-}
-
-.project-title {
-    color: #fff;
-    opacity: 0;
-    text-align: center;
-    width: 100%;
-}
-
-
-img {
-    height: auto;
-    max-width: 100%;
-}
-
-
-
 
